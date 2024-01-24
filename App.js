@@ -7,16 +7,6 @@ import { data } from './src/data';
 
 export default function App() {
   const [currentView, setCurrentView] = useState(0);
-  const totalViews = 3;
-
-  const goToNextView = () => {
-    setCurrentView((prevView) => (prevView + 1) % totalViews);
-  };
-
-  const goToPrevView = () => {
-    setCurrentView((prevView) => (prevView - 1 + totalViews) % totalViews);
-  };
-
 
   return (
 
