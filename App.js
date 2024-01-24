@@ -34,7 +34,7 @@ export default function App() {
         </View>
 
 
-        <View>
+        <View style={styles.viewContainer}>
           {currentView === 0 && <ExercisesView data={data} />}
           {currentView === 1 && <PreWorkoutView />}
 
@@ -53,6 +53,9 @@ const styles = StyleSheet.create({
   body: {
     flex: 1,
     margin: 20,
+  },
+  viewContainer: {
+    flex: 1,
   },
   title: {
     fontSize: 24,
