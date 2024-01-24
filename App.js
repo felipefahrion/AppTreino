@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import { TouchableOpacity, SafeAreaView, FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { ExercisesView } from './src/views/exercises.view';
 import { PreWorkoutView } from './src/views/pre-workout.view';
-import { data } from './src/data';
+import { DietView } from './src/views/diet.view';
+import { dataExxercises } from './src/data-exercises';
+import { dataDiet } from './src/data-diet';
 
 export default function App() {
   const [currentView, setCurrentView] = useState(0);
@@ -21,12 +23,16 @@ export default function App() {
           <TouchableOpacity onPress={() => setCurrentView(1)} style={styles.button}>
             <Text>Aquecimento</Text>
           </TouchableOpacity>
+          <TouchableOpacity onPress={() => setCurrentView(2)} style={styles.button}>
+            <Text>Dieta</Text>
+          </TouchableOpacity>
         </View>
 
 
         <View style={styles.viewContainer}>
-          {currentView === 0 && <ExercisesView data={data} />}
+          {currentView === 0 && <ExercisesView data={dataExxercises} />}
           {currentView === 1 && <PreWorkoutView />}
+          {currentView === 2 && <DietView data={dataDiet} />}
 
         </View>
       </View>
